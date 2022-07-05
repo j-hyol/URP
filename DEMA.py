@@ -1,8 +1,8 @@
-df = pd.read_excel('(N=30 _ Freq=1D) Historical Data-GSON.xlsx')
+import pandas as pd
+import talib
 
-symbol = 'F'
-input_val = data[f'{symbol}']['Close'].values
-real = talib.DEMA(input_val, timeperiod=30)
+output = talib.DEMA(data['F']['Close'].values)
+import matplotlib.pyplot as plt
 
-plt.plot(input_val)
-plt.plot(real)
+plt.plot(data['F']['Close'].values)
+plt.plot(output)
